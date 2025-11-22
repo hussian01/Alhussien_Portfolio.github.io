@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقديم طلب خدمة | الحسين داود سلمان</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* تنسيق خاص لتوسيط النموذج والرسائل */
+        .form-section {
+            /* إزالة الـ display: flex من هنا ونقله إلى الـ container في الأسفل */
+            min-height: 70vh;
+            padding-top: 100px;
+        }
+
+        .form-section .container {
+            /* تطبيق flexbox على مستوى الكونتينر لتوسيط النموذج داخله */
+            display: flex;
+            justify-content: center; /* توسيط أفقي */
+            align-items: center; /* توسيط رأسي */
+            min-height: inherit; /* ورث الحد الأدنى للارتفاع من الأب */
+            width: 100%;
+        }
+
+        .form-wrapper {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            max-width: 600px; /* العرض الأقصى للنموذج */
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+        .success-message {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        .success-message i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .success-message h2 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Hussein<span>.Dev</span></a>
+                <div class="nav-links">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="services.html">خدماتي</a>
+                    <a href="portfolio.html">أعمالي</a>
+                    <a href="certificates.html">الشهادات</a>
+                    <a href="about.html">من أنا</a>
+                    <a href="contact.html">اتصل بي</a>
+                    <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-padding form-section">
+        <div class="container">
+            <div id="successBox" class="success-message" style="display:none;">
+                <i class="fas fa-check-circle"></i>
+                <h2>تم تقديم طلبك بنجاح!</h2>
+                <p style="color: var(--text-muted);">تم استلام طلبك وسنقوم بمراجعته والرد عليك في أقرب وقت ممكن.</p>
+                <a href="index.html" class="btn-neon" style="margin-top: 30px;">العودة للرئيسية</a>
+            </div>
+
+            <div id="formBox" class="form-wrapper hidden show">
+                <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary);">طلب خدمة: <span id="planName"></span></h2>
+                
+                <form action="/submit-order" method="POST">
+    
+    <input type="hidden" name="service_type" value="باقة الأعمال">
+
+    <div class="form-group">
+        <label for="name">اسم العميل / الشركة</label>
+        <input type="text" id="name" name="client_name" class="form-input" placeholder="مثال: شركة النور للحلول الرقمية" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" name="client_email" class="form-input" placeholder="للتواصل معك بخصوص الطلب" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="idea_title">اسم/عنوان الفكرة</label>
+        <input type="text" id="idea_title" name="idea_title" class="form-input" placeholder="مثال: إنشاء موقع إلكتروني تعريفي جديد">
+    </div>
+
+    <div class="form-group">
+        <label for="details">شرح مفصل عن المتطلبات</label>
+        <textarea id="details" name="details" class="form-input" rows="5" placeholder="اشرح هدف المشروع بوضوح، وأي ميزات أساسية مطلوبة." required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="budget">الميزانية التقديرية (اختياري)</label>
+        <select id="budget" name="budget" class="form-input">
+            <option value="">اختر ميزانية تقريبية</option>
+            <option value="$100 - $500">$100 - $500</option>
+            <option value="$500 - $1000">$500 - $1000</option>
+            <option value="+$1000">+$1000</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn-neon">تقديم الطلب</button>
+</form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <p>جميع الحقوق محفوظة © 2024 - الحسين داود سلمان</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const plan = urlParams.get('plan');
+            const planNameElement = document.getElementById('planName');
+            const orderForm = document.getElementById('orderForm');
+            const formBox = document.getElementById('formBox');
+            const successBox = document.getElementById('successBox');
+
+            let displayedPlan = "غير محددة";
+            if (plan === 'Basic') {
+                displayedPlan = "الباقة الأساسية";
+            } else if (plan === 'Business') {
+                displayedPlan = "باقة الأعمال";
+            } else if (plan === 'Enterprise') {
+                displayedPlan = "باقة الشركات";
+            }
+            planNameElement.textContent = displayedPlan;
+
+            orderForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                
+                // === ملاحظة: هنا يجب أن يتم الإرسال الفعلي لبيانات النموذج إلى سيرفر ===
+                
+                // محاكاة لنجاح الإرسال:
+                formBox.style.display = 'none';
+                successBox.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

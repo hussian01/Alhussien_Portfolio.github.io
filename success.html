@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم إرسال الطلب بنجاح | الحسين داود سلمان</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .success-section {
+            /* نفس تنسيق form-section لضمان التوسيط */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px; 
+            text-align: center;
+        }
+
+        .success-wrapper {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 50px 30px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: block;
+            animation: bounce 0.8s ease-out;
+        }
+
+        .success-wrapper h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .success-wrapper p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        /* Animation for the success icon */
+        @keyframes bounce {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive adjustments for success page */
+        @media (max-width: 600px) {
+            .success-wrapper {
+                margin: 0 10px;
+                padding: 30px 20px;
+            }
+            .success-wrapper h2 {
+                font-size: 1.6rem;
+            }
+            .success-wrapper p {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">HUSSEIN<span>.DEV</span></div>
+                </nav>
+        </div>
+    </header>
+
+    <section class="success-section">
+        <div class="container">
+            <div class="success-wrapper">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>شكراً لك! تم استلام طلبك بنجاح</h2>
+                <p>تم إرسال طلبك بنجاح إلى فريق العمل. سيتم مراجعته والتواصل معك على البريد الإلكتروني الذي أدخلته خلال 24 ساعة كحد أقصى.</p>
+                <a href="index.html" class="btn-neon">العودة إلى الصفحة الرئيسية</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2024 - الحسين داود سلمان</p>
+            </div>
+    </footer>
+</body>
+</html>

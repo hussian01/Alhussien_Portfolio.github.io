@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معي | الحسين داود سلمان</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">AlHussein<span>.Dev</span></a>
+                <div class="nav-links">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="services.html">خدماتي</a>
+                    <a href="portfolio.html">أعمالي</a>
+                    <a href="certificates.html">الشهادات</a>
+                    <a href="about.html">من أنا</a>
+                    <a href="contact.html" class="active">اتصل بي</a>
+                    <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="hidden">دعنا نتحدث</h1>
+            <p class="hidden">جاهز لتحويل فكرتك إلى واقع؟ املأ النموذج أدناه</p>
+        </div>
+    </section>
+
+    <section style="padding-bottom: 100px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: start;">
+                
+                <div class="about-card hidden" style="padding: 40px;">
+                    <h3 class="about-title" style="margin-bottom: 30px;">بيانات التواصل</h3>
+                    
+                    <div style="margin-bottom: 25px; display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; background: rgba(37, 99, 235, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">البريد الإلكتروني</span>
+                            <h4 style="color: var(--text-main);">hussiand.s.01@gmail.com</h4>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 25px; display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; background: rgba(37, 99, 235, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem;">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">رقم الهاتف</span>
+                            <h4 style="color: var(--text-main);"> +964 773 717 3482 </h4>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; background: rgba(37, 99, 235, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">العنوان</span>
+                            <h4 style="color: var(--text-main);">بغداد ، العراق</h4>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="about-card hidden">
+    <h3 style="margin-bottom: 25px; text-align: center; color: var(--text-main);">أرسل رسالة</h3>
+    
+    <form id="contact-form"> 
+        <div class="form-group">
+            <input type="text" name="full_name" class="form-input" placeholder="الاسم الكامل" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="client_email" class="form-input" placeholder="البريد الإلكتروني" required>
+        </div>
+        <div class="form-group">
+            <textarea rows="5" name="message_details" class="form-input" placeholder="كيف يمكنني مساعدتك؟" required></textarea>
+        </div>
+        <button type="submit" class="btn-neon" style="width: 100%;">إرسال الرسالة</button>
+    </form>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/hussian_art/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <p>جميع الحقوق محفوظة © 2024 - الحسين داود سلمان</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
