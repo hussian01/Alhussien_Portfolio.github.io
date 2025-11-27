@@ -1,30 +1,70 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- 0. Mobile Menu Toggle Logic (القائمة المتنقلة) ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            // تغيير الأيقونة من شريط إلى X
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // إغلاق القائمة عند النقر على أي رابط
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                // إغلاق القائمة فقط إذا لم يكن الجهاز جهاز كمبيوتر
+                if (window.innerWidth <= 992) {
+                    navLinks.classList.remove('open');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
+
     // --- 1. Dark/Light Mode Toggle Logic ---
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
+    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
     const body = document.body;
 
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark') {
         body.setAttribute('data-theme', 'dark');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-        if (body.hasAttribute('data-theme')) {
-            body.removeAttribute('data-theme');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.setAttribute('data-theme', 'dark');
+        if (themeIcon) {
             themeIcon.classList.remove('fa-moon');
             themeIcon.classList.add('fa-sun');
-            localStorage.setItem('theme', 'dark');
         }
-    });
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            if (body.hasAttribute('data-theme')) {
+                body.removeAttribute('data-theme');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
 
     // --- 2. Typing Effect (لصفحة index.html) ---
     const textElement = document.querySelector('.typing-text');
