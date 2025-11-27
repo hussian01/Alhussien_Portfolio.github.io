@@ -1,5 +1,5 @@
 /* =========================================
-   1. Global Variables & Theme Setup
+    1. Global Variables & Theme Setup
 ========================================= */
 :root {
     /* --- الوضع الفاتح (Light Mode) --- */
@@ -208,128 +208,6 @@ textarea.form-input { resize: vertical; }
 .project-cat { font-size: 0.85rem; color: var(--primary); margin-bottom: 10px; display: block; }
 .project-title { font-size: 1.4rem; color: var(--text-main); margin-bottom: 10px; }
 
-/* --- Certificates Page Styling --- */
-/* ... باقي تنسيق certificate-card كما هو ... */
-
-.cert-placeholder {
-    /* زيادة الارتفاع ليتسع للصورة المصغرة */
-    height: 150px; 
-    /* إزالة الـ display: flex والـ align-items و justify-content لأننا نريد الصورة فقط */
-    /* background-color: var(--input-bg); */ /* يمكن إزالته إذا كانت الصورة تغطي بالكامل */
-    overflow: hidden; 
-    margin-bottom: 0; 
-}
-
-.cert-thumb {
-    /* هذا هو التنسيق الأهم لضمان ظهور الصورة بشكل صحيح */
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* **الخاصية الحاسمة:** لضمان ملء الصورة للمساحة (150px ارتفاع) مع القص عند الضرورة */
-    transition: transform 0.4s ease;
-}
-
-.certificate-card:hover .cert-thumb {
-    transform: scale(1.1);
-}
-
-.cert-info {
-    /* ... باقي التنسيق كما هو ... */
-}
-
-/* --- FOOTER --- */
-footer {
-    background-color: var(--card-bg);
-    border-top: 1px solid var(--border-color);
-    padding: 30px 0;
-    margin-top: auto;
-    text-align: center;
-    width: 100%;
-}
-
-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-footer p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-footer .social-icons {
-    display: flex;
-    gap: 20px;
-}
-
-footer .social-icons a {
-    color: var(--text-muted);
-    font-size: 1.2rem;
-    transition: 0.3s ease;
-}
-
-footer .social-icons a:hover {
-    color: var(--primary);
-    transform: translateY(-3px);
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    /* --- General Layout Adjustments --- */
-    .section-padding { padding: 60px 0; }
-    .page-header h1 { font-size: 2.5rem; }
-    
-    /* --- Navigation Adjustments (Tablet/Desktop small) --- */
-    .nav-links { gap: 15px; } 
-    .nav-links a { font-size: 0.9rem; padding: 5px; }
-
-    /* --- Hero Section Adjustments --- */
-    .hero { min-height: auto; padding: 100px 0 60px; }
-    .hero-container { flex-direction: column-reverse; text-align: center; justify-content: center; }
-    .hero-text h1 { font-size: 2.8rem; }
-    .english-name { font-size: 1.5rem; }
-    .profile-img { width: 250px; height: 250px; }
-    .hero-image-box::before { width: 300px; height: 300px; }
-    
-    /* --- Grid Adjustments --- */
-    .card-grid { grid-template-columns: 1fr; } 
-    .about-grid { grid-template-columns: 1fr; }
-
-    /* --- Form Section Adjustment (order.html) --- */
-    .form-section { padding-top: 80px; min-height: auto; }
-    .form-wrapper { 
-        padding: 30px; 
-        max-width: 95%; /* زيادة مرونة العرض */
-        margin: 0 auto; /* ضمان التوسيط */
-    }
-}
-
-/* تعديل إضافي لشاشات الهواتف الصغيرة (مثل 576px) */
-@media (max-width: 576px) {
-    .logo { font-size: 1.4rem; }
-    
-    /* تصغير خطوط القائمة لتناسب العرض الصغير */
-    .nav-links a { font-size: 0.8rem; } 
-    .nav-links { gap: 8px; }
-
-    .btn-neon { padding: 10px 20px; font-size: 0.85rem; }
-    .hero-text h1 { font-size: 2rem; }
-    .english-name { font-size: 1.2rem; }
-    
-    /* تقليل الحشو للـ container */
-    .container { padding: 0 10px; } 
-
-    /* ضمان توسيع النموذج على الهواتف */
-    .form-wrapper { 
-        padding: 20px; /* تقليل الحشو الداخلي */
-        max-width: 100%;
-        margin: 0;
-    }
-}
-
 /* =========================================
     7. Certificates Page Styling (التنسيق الجديد)
 ========================================= */
@@ -483,5 +361,165 @@ footer .social-icons a:hover {
         top: 10px;
         right: 15px;
         font-size: 30px;
+    }
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+footer .social-icons a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+    8. Responsive Adjustments (الاستجابة)
+========================================= */
+
+/* --- أيقونة قائمة التنقل (القائمة المتنقلة - Mobile Menu) --- */
+.menu-toggle {
+    display: none; /* إخفاء الزر افتراضياً على شاشات الكمبيوتر */
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 5px;
+}
+.menu-toggle:hover {
+    color: var(--primary);
+}
+
+/* ---------------------------------------------------------------- */
+/* الشاشات الكبيرة والمتوسطة (أقل من 1200px) - الأجهزة اللوحية الأفقية */
+/* ---------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/* الأجهزة اللوحية (Tablets) - أقل من 992px */
+/* ---------------------------------------------------------------- */
+@media (max-width: 992px) {
+    /* --- التخطيطات العامة --- */
+    .section-padding { padding: 60px 0; }
+    .page-header { padding: 120px 0 60px; }
+    .page-header h1 { font-size: 2.5rem; }
+    
+    /* --- قسم HERO --- */
+    .hero { min-height: auto; padding: 100px 0 60px; }
+    .hero-container { 
+        flex-direction: column-reverse; 
+        text-align: center; 
+        justify-content: center; 
+        gap: 40px;
+    }
+    .hero-text h1 { font-size: 2.5rem; }
+    .english-name { font-size: 1.4rem; }
+    .profile-img { width: 280px; height: 280px; }
+    .hero-image-box::before { width: 330px; height: 330px; }
+
+    /* --- تخطيط الشبكات (الخدمات والشهادات) --- */
+    .card-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } 
+    
+    /* --- قسم من أنا (About) --- */
+    .about-grid { grid-template-columns: 1fr; } /* عمود واحد */
+    /* تعديل التايم لاين ليتناسب مع العرض الأصغر */
+    .timeline { border-right: none; padding-right: 0; }
+    .timeline-item { border-right: 2px solid var(--border-color); padding-right: 20px; }
+    .timeline-dot { right: auto; left: -10px; }
+
+    /* --- تباعد الـ Navbar (تم إخفائها هنا) --- */
+    .nav-links { 
+        display: none; /* إخفاء القائمة هنا استعداداً للقائمة المتنقلة */
+        position: absolute;
+    }
+    .menu-toggle { display: block; }
+}
+
+/* ---------------------------------------------------------------- */
+/* الهواتف الذكية (Small Phones) - أقل من 576px */
+/* ---------------------------------------------------------------- */
+@media (max-width: 576px) {
+    .logo { font-size: 1.6rem; }
+    .container { padding: 0 15px; } 
+
+    /* --- قسم HERO --- */
+    .hero-text h1 { font-size: 2rem; }
+    .english-name { font-size: 1.2rem; }
+    .profile-img { width: 200px; height: 200px; }
+    .hero-image-box::before { width: 250px; height: 250px; }
+
+    .btn-neon { padding: 10px 20px; font-size: 0.9rem; }
+    
+    /* --- تنسيق الـ Mobile Menu الظاهر --- */
+    .nav-links.open { 
+        display: flex; 
+        flex-direction: column; 
+        position: absolute;
+        top: 65px; /* أسفل الـ Header */
+        right: 0;
+        left: 0;
+        background: var(--nav-bg);
+        border-top: 1px solid var(--border-color);
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .nav-links a { 
+        padding: 10px 20px; 
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .nav-links a:last-child { border-bottom: none; }
+    
+    /* تعديل زر تبديل الثيم ليكون داخل القائمة أو على اليمين */
+    .theme-toggle {
+        margin-right: auto; /* ليدفعه إلى أقصى اليسار في النافبار */
+        margin-left: 10px;
+    }
+    
+    /* ضمان توسيع النموذج على الهواتف */
+    .form-wrapper { 
+        padding: 20px; /* تقليل الحشو الداخلي */
+        max-width: 100%;
+        margin: 0;
     }
 }
