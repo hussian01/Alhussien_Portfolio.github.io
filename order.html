@@ -51,25 +51,38 @@
             margin-bottom: 15px;
         }
     </style>
+    <style>
+        @media (max-width: 576px) {
+            .form-wrapper {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">Hussein<span>.Dev</span></a>
-                <div class="nav-links">
-                    <a href="index.html">الرئيسية</a>
-                    <a href="services.html">خدماتي</a>
-                    <a href="portfolio.html">أعمالي</a>
-                    <a href="certificates.html">الشهادات</a>
-                    <a href="about.html">من أنا</a>
-                    <a href="contact.html">اتصل بي</a>
-                    <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">AlHussein<span>.Dev</span></a>
+            
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="services.html">خدماتي</a>
+                <a href="about.html">من أنا</a>
+                <a href="portfolio.html">أعمالي</a>
+                <a href="certificates.html">الشهادات</a>
+                <a href="contact.html">اتصل بي</a>
+                
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </nav>
+    </div>
+</header>
 
     <section class="section-padding form-section">
         <div class="container">
@@ -136,7 +149,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
